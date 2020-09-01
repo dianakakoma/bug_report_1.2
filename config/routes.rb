@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   post "/reports" => "reports#create"
   get "/reports/:id" => "reports#show"
   patch "/reports/:id" => "reports#update"
-  delete "/reports/:id" => "report#destroy"
-  # end
+  delete "/reports/:id" => "reports#destroy"
+  end
 end

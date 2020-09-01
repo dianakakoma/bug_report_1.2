@@ -10,9 +10,11 @@ class Api::ReportsController < ApplicationController
       description: params[:description],
       suggested_fix: params[:suggested_fix],
       url: params[:url],
-      status: submitted,
+      status: "submitted",
       screenshot: params[:screenshot]
     )
+    @report.save
+    render "show.json.jb"
   end
 
   def show
@@ -22,7 +24,8 @@ class Api::ReportsController < ApplicationController
 
   def update
     @report = Report.find_by(id: params[:id])
-    @report.suggested_fix = params[suggested_fix] || @report.suggested_fix
+    @report.suggested_fix = params[:suggested_fix] || @report.suggested_fix
+    @report.status = params[:status] || @report.status
     @report.save
     render "show.json.jb"
   end

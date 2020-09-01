@@ -4,6 +4,6 @@
   description: @report.description, 
   suggested_fix: @report.suggested_fix, 
   url: @report.url,
-  status: @report.suggested_fix, 
+  status: @report.status, 
   screenshot: @report.screenshot
 }
